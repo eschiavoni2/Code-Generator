@@ -1,17 +1,17 @@
 var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   
-  var testAlert = prompt("enter number of characters");
   var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
   var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
+  var masterArray = [];
 
   var passwordLength = prompt("Choose a password length between 8 and 129 characters");
   if (passwordLength <= 7) {
     alert("Password length must be greater than 7 characters")
   }
-  else if (passwordLength >=130) {
+  else if (passwordLength >= 130) {
     alert("Password length must be less than 130 characters")
   }
   else {
@@ -20,13 +20,26 @@ function generatePassword() {
     passwordLower = confirm("Would you like Lowercase characters?");
     passwordNum = confirm("Would you like Number characters?")
   }
-  var pwCharacters = 
+
+  if (passwordSpecial) {
+    masterArray.push(...special);
+  }
+  if (passwordUpper) {
+    masterArray.push(...upper);
+  }
+  if (passwordLower) {
+    masterArray.push(...lower);
+  }
+  if (passwordNum) {
+    masterArray.push(...nums);
+  }
+ 
   // put majority of code here
   // ask for special characters
   // ask for uppercase characters
   // ask for lowercase characters
   // ask for numbers
-  return testAlert
+  return generatePassword
 }
 // Write password to the #password input
 function writePassword() {
