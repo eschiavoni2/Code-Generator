@@ -35,7 +35,7 @@ function generatePassword() {
     masterArray.push(...nums);
   }
  for(var i = 0; i < finalLength; i++) {
-   var rand = Math.floor(math.random()*masterArray.length; password += masterArray[rand];
+   var rand = Math.floor(Math.random()*masterArray.length); password += masterArray[rand];
  }
   
   return password
