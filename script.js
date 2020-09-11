@@ -6,7 +6,7 @@ function generatePassword() {
   var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
   var masterArray = [];
-  var finalLength = "";
+  var passwordLength = "";
 
   var passwordLength = prompt("Choose a password length between 8 and 129 characters");
   if (passwordLength <= 7) {
@@ -34,8 +34,9 @@ function generatePassword() {
   if (passwordNum) {
     masterArray.push(...nums);
   }
- for(var i = 0; i < finalLength; i++) {
-   var rand = Math.floor(Math.random()*masterArray.length); password += masterArray[rand];
+ for(var i = 0; i < passwordLength ; i++) {
+   var rand = Math.floor(Math.random()*masterArray.length); 
+   password += masterArray[rand];
  }
   
   return password
