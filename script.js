@@ -6,6 +6,7 @@ function generatePassword() {
   var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
   var masterArray = [];
+  var finalLength = "";
 
   var passwordLength = prompt("Choose a password length between 8 and 129 characters");
   if (passwordLength <= 7) {
@@ -14,12 +15,12 @@ function generatePassword() {
   else if (passwordLength >= 130) {
     alert("Password length must be less than 130 characters")
   }
-  else {
+
     passwordSpecial = confirm("Would you like special characters?");
     passwordUpper = confirm("Would you like Uppercase characters?");
     passwordLower = confirm("Would you like Lowercase characters?");
     passwordNum = confirm("Would you like Number characters?")
-  }
+
 
   if (passwordSpecial) {
     masterArray.push(...special);
@@ -33,13 +34,11 @@ function generatePassword() {
   if (passwordNum) {
     masterArray.push(...nums);
   }
- 
-  // put majority of code here
-  // ask for special characters
-  // ask for uppercase characters
-  // ask for lowercase characters
-  // ask for numbers
-  return generatePassword
+ for(var i = 0; i < finalLength; i++) {
+   var rand = Math.floor(math.random()*masterArray.length; password += masterArray[rand];
+ }
+  
+  return password
 }
 // Write password to the #password input
 function writePassword() {
@@ -48,4 +47,4 @@ function writePassword() {
   passwordText.value = password;
 }
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
